@@ -1,0 +1,16 @@
+#JS
+Autofocus: es un evento para que cuando se inicie la pagina el curso apunte al campo a completar 
+
+text-content: para ver el texto de un elemento.
+
+Fetch: manejador de peticiones Http, que contiene los verbos.
+        // fetch('../Json/usuarios.json')
+        // .then(r => r.json()).then(res => console.log(res));
+
+#CSS
+display-none: ocultar
+display-block: aparecer
+
+#HTML
+required: te obliga a completar el campo.
+

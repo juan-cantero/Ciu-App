@@ -1,0 +1,12 @@
+{
+    "usuarios":[
+        {
+            "usuario":"Magui",
+            "contrasenia":1234
+        },
+        {
+            "usuario":"Joni",
+            "contrasenia":5678
+        }
+    ]
+}

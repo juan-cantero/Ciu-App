@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+
+
 </head>
+
 <body>
-    <div>
-        <label for=""></label>
-        <label for=""></label>
-        <input type="text">
-        <input type="text">
-        <button>Iniciar sesión</button>
+    <!-- <div>
+        <p id="ayuda"></p>
+    </div> -->
+    <p id="alerta"></p>
+    <div class="login-box">
+        <img class="icon" src="../../Img/account_circle.svg" alt="">
+        <h1>Iniciar sesión</h1>
+        <!-- Etiqueta for para hacer referencia a la etiqueta input en su 
+        propiedad name -->
+        <form action="">
+            <label for="usuario" id="usuario-label">Usuario</label>
+            <input type="text" placeholder="Ingresar usuario" name="usuario" id="usuario" autofocus required>
+
+            <label for="contrasenia" id="contrasenia-label">Contraseña</label>
+            <input type="password" placeholder="Ingresar contraseña" name="contrasenia" id="contrasenia" required>
+
+            <button id="boton-iniciar">Iniciar sesión</button>
+
+            <a href=" #">Olvide mi contraseña</a> <br>
+            <a href="#">Registrarse</a>
+        </form>
+
+
     </div>
+
+    <script src="../Js/index.js"></script>
 </body>
+
 </html>
