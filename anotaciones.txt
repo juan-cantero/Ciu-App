@@ -11,6 +11,14 @@ Fetch: manejador de peticiones Http, que contiene los verbos.
 display-none: ocultar
 display-block: aparecer
 
+el * selecciona todos los elementos, y box-sizing sirve para manegar como se dimensionan
+los nodos, en este caso border box va a tener en cuenta hasta el borde cuando
+dimensiones un nodo.
+* {
+    box-sizing: border-box
+    ;
+}
+
 #HTML
 required: te obliga a completar el campo.
 
