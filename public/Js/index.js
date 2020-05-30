@@ -12,17 +12,21 @@ botonIniciar.addEventListener("click",(event) => {
 
 async function iniciarSesion(){
     const user = {
+        // @ts-ignore
         usuario: usuario.value,
+        // @ts-ignore
         contrasenia: contrasenia.value
     }
 
     if (user.usuario == "" && user.contrasenia == "") {
         alertaLogin("Campos vacios. Por favor,inténtelo otra vez.");    
+        // @ts-ignore
         usuario.style.borderBottom = "1px solid red";
+        // @ts-ignore
         contrasenia.style.borderBottom = "1px solid red";
     }
     else {
-        const response = await fetch('../Json/usuarios.json');
+        const response = await fetch('./Json/usuarios.json');
         const data = await response.json()
         buscarUsuario(data.usuarios, user);
     }
@@ -43,8 +47,10 @@ const buscarUsuario = (usuarios, user) => {
 
 const alertaLogin = (mensaje) => {
     alerta.innerHTML = mensaje;
+    // @ts-ignore
     alerta.style.display = "block";
     setTimeout(() => {
+        // @ts-ignore
         alerta.style.display = "none";
     }, 3000);
 }
