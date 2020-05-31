@@ -3,21 +3,19 @@ const contrasenia = document.querySelector("#contrasenia");
 const alerta = document.querySelector("#alerta");
 const botonIniciar = document.getElementById("boton-iniciar");
 
-//setAyuda();
-
-botonIniciar.addEventListener("click",(event) => {
+botonIniciar.addEventListener("click", (event) => {
     event.preventDefault();
     iniciarSesion();
 });
 
-async function iniciarSesion(){
+async function iniciarSesion() {
     const user = {
         usuario: usuario.value,
         contrasenia: contrasenia.value
     }
 
     if (user.usuario == "" && user.contrasenia == "") {
-        alertaLogin("Campos vacios. Por favor,inténtelo otra vez.");    
+        alertaLogin("Campos vacios. Por favor,inténtelo otra vez.");
         usuario.style.borderBottom = "1px solid red";
         contrasenia.style.borderBottom = "1px solid red";
     }
@@ -52,30 +50,4 @@ const alertaLogin = (mensaje) => {
 
 
 
-
-
-
-
-
-// function mostrarAyuda(ayuda) {
-//     document.getElementById('ayuda').innerHTML = ayuda;
-// }
-
-// function makeHelpCallback(ayuda) {
-//     return function () {
-//         mostrarAyuda(ayuda);
-//     };
-// }
-
-// function setAyuda() {
-//     var textoAyuda = [
-//         { 'id': 'usuario', 'ayuda': 'Ingrese su usuario' },
-//         { 'id': 'contrasenia', 'ayuda': 'Ingrese su contraseña' }
-//     ];
-
-//     for (var i = 0; i < textoAyuda.length; i++) {
-//         var item = textoAyuda[i];
-//         document.getElementById(item.id).onfocus = makeHelpCallback(item.ayuda);
-//     }
-// }
 

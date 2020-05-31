@@ -14,3 +14,21 @@ display-block: aparecer
 #HTML
 required: te obliga a completar el campo.
 
+
+botonIniciar.addEventListener('click', () => {
+    const user = {
+        "usuario": "Pedrito",
+        "contrasenia": 9809
+    }
+
+    fetch('usuarios.json', {
+        method: 'POST',
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
+        .then(res => res.json())
+        .then(data => console.log(data));
+
+})
