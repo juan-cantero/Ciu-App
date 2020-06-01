@@ -71,6 +71,16 @@ botonModificar.addEventListener("click",async (e)=> {
     window.localStorage.setItem('solicitudParaActualizar',JSON.stringify(solicitudParaActualizar));
     document.location.href="mi_solicitud.html"
     
+})
+
+const botonBorrar = document.querySelector('#Borrar');
+botonBorrar.addEventListener('click', async (e)=> {
+    e.preventDefault();
+    let solicitudParaBorrar = await getSolicitudChequeada();
+    let index = solicitudes.findIndex( solicitud => solicitud.id === solicitudParaBorrar[0].id);
+    solicitudes.splice(index,1);
+    window.localStorage.setItem('solicitudes',JSON.stringify(solicitudes));
+    main()
     
 })
 
@@ -84,7 +94,6 @@ async function main(){
     await renderSolicitudes()
 
 }
-
 
 main()
 
