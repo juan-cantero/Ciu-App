@@ -1,18 +1,23 @@
-{
-    "solicitudes" : [
-        {
-            "fecha":"30-07-2019",
-            "descripcion":"cambio de comision",
-            "estado":"abierta"
-        },
-         {
-            "fecha":"20-03-2019",
-            "descripcion":"solicitud libreta",
-            "estado":"en progreso"
-        }, {
-            "fecha":"30-07-2019",
-            "descripcion":"cambio de carrera",
-            "estado":"cerrada"
-        }
+
+[
+    {
+        "fecha":"30-07-2019",
+        "descripcion":"cambio de comision",
+        "estado":"abierta",
+        "checked": false
+    },
+
+    {
+        "fecha":"20-03-2019",
+        "descripcion":"solicitud libreta",
+        "estado":"en progreso",
+        "checked": false
+    }, 
+        
+    {
+        "fecha":"30-07-2019",
+        "descripcion":"cambio de carrera",
+        "estado":"cerrada",
+        "checked": false
+    }
     ]
-}

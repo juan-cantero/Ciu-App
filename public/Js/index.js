@@ -41,6 +41,7 @@ const buscarUsuario = (usuarios, user) => {
     if (usuarioEncontrado.length === 0) {
         alertaLogin("El usuario no existe!");
     } else {
+        document.location.href= "solicitudes.html";
         console.log("Iniciando sesion...")
     }
 }
