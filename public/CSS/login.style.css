@@ -1,9 +1,29 @@
-.body{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    height: 100vh;
+* {
+    box-sizing: border-box
+    ;
 }
+
+body{
+    font-family: sans-serif;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 63%, rgba(34,195,43,1) 100%); 
+}
+    
+
+.unahur-logo {
+    padding: 0;
+    width: 100%;
+    height: auto;
+    margin-bottom: 300px;
+}
+
+.unahur-logo img {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
 
 .login-box{
     width: 400px;
@@ -12,7 +32,7 @@
     color: #fff;
     top: 50%;
     left: 50%;
-    position: absolute;
+    position: relative;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 70px 30px;
@@ -61,11 +81,10 @@
     outline: none;
     width: 100%;
     height: 35px;
-    background: #4CAF50;
+    background: #BEED83;
     font-size: 18px;
     border-radius: 20px;
     margin-bottom: 6px;
-    color: #fff;
 }
 
 .login-box a{
@@ -85,7 +104,7 @@
     height: 37px;
     width: 400px;
     left: 40%;
-    background-color: rgb(241,90,90,24%);  
+    background-color: rgb(241,  90, 90,24%);  
     text-align: center; 
     border: none; 
     font-size: 18px;
@@ -94,11 +113,3 @@
     margin-top: 20px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .margin-responsive{
-        width: 300px;
-        height: 320px; 
-        padding: 25px 20px;    
-    }
-}

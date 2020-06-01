@@ -11,6 +11,14 @@ Fetch: manejador de peticiones Http, que contiene los verbos.
 display-none: ocultar
 display-block: aparecer
 
+el * selecciona todos los elementos, y box-sizing sirve para manegar como se dimensionan
+los nodos, en este caso border box va a tener en cuenta hasta el borde cuando
+dimensiones un nodo.
+* {
+    box-sizing: border-box
+    ;
+}
+
 #HTML
 required: te obliga a completar el campo.
 
@@ -32,3 +40,15 @@ botonIniciar.addEventListener('click', () => {
         .then(data => console.log(data));
 
 })
+
+
+# Local storage 
+Local storage es basicamente un mapa, [key, value] donde el key es 
+el nombre que queramos y el valor es nuestra variable a guardar, 
+si usamos un objeto lo tenemos que guardar como un string 
+
+guardamos el item 
+window.localStorage.setItem('solicitudParaActualizar',JSON.stringify(solicitudParaActualizar));
+
+traemos el item
+var solicitudParaActualizarString = window.localStorage.getItem('solicitudParaActualizar');

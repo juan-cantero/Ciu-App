@@ -3,24 +3,30 @@ const contrasenia = document.querySelector("#contrasenia");
 const alerta = document.querySelector("#alerta");
 const botonIniciar = document.getElementById("boton-iniciar");
 
-botonIniciar.addEventListener("click", (event) => {
+//setAyuda();
+
+botonIniciar.addEventListener("click",(event) => {
     event.preventDefault();
     iniciarSesion();
 });
 
-async function iniciarSesion() {
+async function iniciarSesion(){
     const user = {
+        // @ts-ignore
         usuario: usuario.value,
+        // @ts-ignore
         contrasenia: contrasenia.value
     }
 
     if (user.usuario == "" && user.contrasenia == "") {
-        alertaLogin("Campos vacios. Por favor,inténtelo otra vez.");
+        alertaLogin("Campos vacios. Por favor,inténtelo otra vez.");    
+        // @ts-ignore
         usuario.style.borderBottom = "1px solid red";
+        // @ts-ignore
         contrasenia.style.borderBottom = "1px solid red";
     }
     else {
-        const response = await fetch('../Json/usuarios.json');
+        const response = await fetch('./Json/usuarios.json');
         const data = await response.json()
         buscarUsuario(data.usuarios, user);
     }
@@ -35,14 +41,17 @@ const buscarUsuario = (usuarios, user) => {
     if (usuarioEncontrado.length === 0) {
         alertaLogin("El usuario no existe!");
     } else {
+        document.location.href= "solicitudes.html";
         console.log("Iniciando sesion...")
     }
 }
 
 const alertaLogin = (mensaje) => {
     alerta.innerHTML = mensaje;
+    // @ts-ignore
     alerta.style.display = "block";
     setTimeout(() => {
+        // @ts-ignore
         alerta.style.display = "none";
     }, 3000);
 }
@@ -50,4 +59,30 @@ const alertaLogin = (mensaje) => {
 
 
 
+
+
+
+
+
+// function mostrarAyuda(ayuda) {
+//     document.getElementById('ayuda').innerHTML = ayuda;
+// }
+
+// function makeHelpCallback(ayuda) {
+//     return function () {
+//         mostrarAyuda(ayuda);
+//     };
+// }
+
+// function setAyuda() {
+//     var textoAyuda = [
+//         { 'id': 'usuario', 'ayuda': 'Ingrese su usuario' },
+//         { 'id': 'contrasenia', 'ayuda': 'Ingrese su contraseña' }
+//     ];
+
+//     for (var i = 0; i < textoAyuda.length; i++) {
+//         var item = textoAyuda[i];
+//         document.getElementById(item.id).onfocus = makeHelpCallback(item.ayuda);
+//     }
+// }
 
