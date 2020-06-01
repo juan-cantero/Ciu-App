@@ -52,3 +52,12 @@ window.localStorage.setItem('solicitudParaActualizar',JSON.stringify(solicitudPa
 
 traemos el item
 var solicitudParaActualizarString = window.localStorage.getItem('solicitudParaActualizar');
+
+
+# queryselector
+
+Con el querySelector moderno se pueden seleccionar elementos por classes, ids pero 
+ademas por valores
+
+var estado = "lo que sea"
+document.querySelector('.sel [value="'+estado+'"');
