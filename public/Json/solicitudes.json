@@ -1,21 +1,24 @@
 
 [
     {
-        "fecha":"30-07-2019",
+        "id": 0,
+        "fecha":"2019-07-30",
         "descripcion":"cambio de comision",
         "estado":"abierta",
         "checked": false
     },
 
-    {
-        "fecha":"20-03-2019",
+    {   
+        "id": 1,
+        "fecha":"2020-02-03",
         "descripcion":"solicitud libreta",
         "estado":"en progreso",
         "checked": false
     }, 
         
-    {
-        "fecha":"30-07-2019",
+    {   
+        "id":2,
+        "fecha":"2020-03-07",
         "descripcion":"cambio de carrera",
         "estado":"cerrada",
         "checked": false

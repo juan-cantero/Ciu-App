@@ -28,6 +28,7 @@ async function iniciarSesion(){
     else {
         const response = await fetch('./Json/usuarios.json');
         const data = await response.json()
+        await guardarSolicitudes()
         buscarUsuario(data.usuarios, user);
     }
 }
@@ -54,6 +55,17 @@ const alertaLogin = (mensaje) => {
         // @ts-ignore
         alerta.style.display = "none";
     }, 3000);
+}
+
+async function traerSolicitudesDeJson() {
+    const response = await fetch('./Json/solicitudes.json');
+    const data = await response.json();
+    return data;
+}
+
+async function guardarSolicitudes() {
+    const data = await traerSolicitudesDeJson()
+    window.localStorage.setItem('solicitudes',JSON.stringify(data));
 }
 
 

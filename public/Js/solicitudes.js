@@ -3,15 +3,17 @@
 
 var solicitudParaActualizar ;
 var solicitudes;
-    //document.querySelector('#sel [value="en progreso"]')
+
+
 
 
 
 
 async function traerSolicitudes() {
-    const response = await fetch('./Json/solicitudes.json');
-    const data = await response.json();
-    return data;
+    const solicitudesString = window.localStorage.getItem('solicitudes');
+    const solicitudes = JSON.parse(solicitudesString);
+    return solicitudes;
+
 }
 
 
@@ -85,7 +87,6 @@ async function main(){
 
 
 main()
-
 
 
 
