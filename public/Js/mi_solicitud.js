@@ -5,6 +5,7 @@ var solicitudParaActualizar = JSON.parse(solicitudParaActualizarString)
 var solicitudes =  traerSolicitudes();
 
 
+const title = document.querySelector(".title");
  const selector = document.querySelector('.sel');   
  const textArea = document.querySelector('#text-area');
  const fechaElement = document.querySelector('#fecha');
@@ -24,6 +25,7 @@ function renderMiSolicitud() {
     console.log(fecha,descripcion)
     const val = document.querySelector('.sel [value="'+estado+'"');
 
+    title.innerHTML = descripcion;
     val.selected = true
     textArea.innerHTML = descripcion;
     fechaElement.value = fecha;
@@ -52,6 +54,11 @@ guardar.addEventListener('click',(e) => {
     
 })
 
+function renderNombreUsuario() {
+    const nombreUsuario = window.localStorage.getItem('nombreUsuario')
+    document.querySelector(".navbar__nombre").textContent = nombreUsuario;
+}
 
 
+renderNombreUsuario()
 renderMiSolicitud()

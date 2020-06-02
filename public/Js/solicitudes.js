@@ -21,9 +21,10 @@ async function traerSolicitudes() {
 async function renderSolicitudes() {
     const data = solicitudes
     let table = `<tr>
-                        <th>fecha</th>
-                        <th>descripcion</th>
-                        <th>solicitud</th>
+                        <th>Fecha</th>
+                        <th>Descripcion</th>
+                        <th>Solicitud</th>
+                        <th>Seleccion</th>
 
                     </tr>`;
     data.forEach((solicitud) => {
@@ -84,13 +85,21 @@ botonBorrar.addEventListener('click', async (e)=> {
     
 })
 
+function renderNombreUsuario() {
+    const nombreUsuario = window.localStorage.getItem('nombreUsuario')
+    document.querySelector(".navbar__nombre").textContent = nombreUsuario;
+}
+
 
 
 
 
 
 async function main(){
+    renderNombreUsuario()
     solicitudes = await traerSolicitudes()
+    
+
     await renderSolicitudes()
 
 }

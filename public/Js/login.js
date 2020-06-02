@@ -10,6 +10,12 @@ botonIniciar.addEventListener("click",(event) => {
     iniciarSesion();
 });
 
+async function traerUsuarioDeJson() {
+    const response = await fetch('./Json/usuarios.json');
+    const data = await response.json()
+    return data;
+}
+
 async function iniciarSesion(){
     const user = {
         // @ts-ignore
@@ -26,9 +32,9 @@ async function iniciarSesion(){
         contrasenia.style.borderBottom = "1px solid red";
     }
     else {
-        const response = await fetch('./Json/usuarios.json');
-        const data = await response.json()
-        await guardarSolicitudes()
+        let data = await traerUsuarioDeJson();
+        await guardarSolicitudes();
+        await guardarNombreDeUsuario(user.usuario);
         buscarUsuario(data.usuarios, user);
     }
 }
@@ -66,6 +72,14 @@ async function traerSolicitudesDeJson() {
 async function guardarSolicitudes() {
     const data = await traerSolicitudesDeJson()
     window.localStorage.setItem('solicitudes',JSON.stringify(data));
+    
+}
+
+async function guardarNombreDeUsuario(nombreAGuardar) {
+    const data = await traerUsuarioDeJson();
+    const users = data.usuarios.filter(u => u.usuario === nombreAGuardar);
+    const {usuario} = users[0];
+    window.localStorage.setItem('nombreUsuario',usuario);
 }
 
 
