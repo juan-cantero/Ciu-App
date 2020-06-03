@@ -56,7 +56,7 @@ async function getSolicitudChequeada() {
 
         if(solicitudCheckeada.length > 1) {
             alert("debe seleccionar solo una solicitud")
-            return;
+            return null;
         }
         else {
             return solicitudCheckeada;
@@ -73,6 +73,7 @@ const botonModificar = document.getElementById("Modificar");
 botonModificar.addEventListener("click",async (e)=> {
     e.preventDefault();
     solicitudParaActualizar= await getSolicitudChequeada()
+    if (solicitudParaActualizar === null) {return}
     window.localStorage.setItem('solicitudParaActualizar',JSON.stringify(solicitudParaActualizar));
     document.location.href="modificar_solicitud.html"
     
