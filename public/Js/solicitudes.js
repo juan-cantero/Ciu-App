@@ -63,14 +63,18 @@ async function getSolicitudChequeada() {
         }
 }
 
-
+const botonNuevaSolicitud = document.querySelector("#Nueva");
+botonNuevaSolicitud.addEventListener('click',(e)=>{
+    e.preventDefault();
+    document.location.href="nueva_solicitud.html";
+})
 
 const botonModificar = document.getElementById("Modificar");
 botonModificar.addEventListener("click",async (e)=> {
     e.preventDefault();
     solicitudParaActualizar= await getSolicitudChequeada()
     window.localStorage.setItem('solicitudParaActualizar',JSON.stringify(solicitudParaActualizar));
-    document.location.href="mi_solicitud.html"
+    document.location.href="modificar_solicitud.html"
     
 })
 

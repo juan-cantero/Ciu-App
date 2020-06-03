@@ -7,6 +7,10 @@
         {
             "usuario":"Joni",
             "contrasenia":5678
+        },
+        {
+            "usuario":"juan",
+            "contrasenia":1234
         }
     ]
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi solicitud</title>
+    <link rel="stylesheet" href="./CSS/mi_solicitud.css">
+</head>
+
+<body>
+    <div class="logo_navbar">
+        <img src="./Img/logo_unahur.png" alt="">
+    </div>
+    <div class="navbar">
+        <a href="solicitudes.html">Mis solicitudes</a>
+        <div class="dropdown">
+            <button class="dropbtn navbar__nombre">Nombre y Apellido
+                <img class="icon_arrow" src="./Img/arrow_down_white_.png">
+            </button>
+            <div class="dropdown-content">
+                <a href="login.html">Salir</a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h4 class="title">Solicitud - Nombre de Solicitud</h4>
+
+        <div class="contenedor">
+
+
+            <div class="div-descripcion">
+                <label for="descripcion">Descripcion</label>
+                <textarea name="descripcion" id="text-area" cols="100" rows="20"></textarea>
+            </div>
+
+            <div class="btns">
+                <button class="guardar">Guardar</button>
+                <button class="cancelar">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="./Js/nueva_solicitud.js"></script>
+</body>
+
+</html>

@@ -54,6 +54,12 @@ guardar.addEventListener('click',(e) => {
     
 })
 
+cancelar.addEventListener('click',(e)=> {
+    e.preventDefault();
+    document.location.href="solicitudes.html";
+
+})
+
 function renderNombreUsuario() {
     const nombreUsuario = window.localStorage.getItem('nombreUsuario')
     document.querySelector(".navbar__nombre").textContent = nombreUsuario;
