@@ -38,7 +38,11 @@ async function iniciarSesion(){
         buscarUsuario(data.usuarios, user);
     }
 }
-
+function validarContrasenia(contrasenia) {
+    if (contrasenia.length >= 8) {
+        
+    }
+}
 const buscarUsuario = (usuarios, user) => {
     const usuarioEncontrado = usuarios.filter(u =>
         u.usuario == user.usuario &&
