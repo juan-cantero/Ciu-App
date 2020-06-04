@@ -110,3 +110,12 @@ body{
     z-index: 20;
 }
 
+/* Responsive */
+@media (max-width: 600px) {
+    .margin-responsive{
+        width: 300px;
+        height: 320px; 
+        padding: 25px 20px;    
+    }
+}
+
