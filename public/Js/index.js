@@ -1,5 +1,5 @@
 
 window.onload = (e) => {
-    document.location.href="login.html"
+    document.location.href="/public/html/login.html"
     
 }

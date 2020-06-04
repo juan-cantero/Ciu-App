@@ -11,7 +11,7 @@ botonIniciar.addEventListener("click",(event) => {
 });
 
 async function traerUsuarioDeJson() {
-    const response = await fetch('./Json/usuarios.json');
+    const response = await fetch('../Json/usuarios.json');
     const data = await response.json()
     return data;
 }
@@ -68,7 +68,7 @@ const alertaLogin = (mensaje) => {
 }
 
 async function traerSolicitudesDeJson() {
-    const response = await fetch('./Json/solicitudes.json');
+    const response = await fetch('../Json/solicitudes.json');
     const data = await response.json();
     return data;
 }

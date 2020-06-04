@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi solicitud</title>
-    <link rel="stylesheet" href="./CSS/mi_solicitud.css">
+    <link rel="stylesheet" href="../CSS/mi_solicitud.css">
 </head>
 
 <body>
     <div class="logo_navbar">
-        <img src="./Img/logo_unahur.png" alt="">
+        <img src="../Img/logo_unahur.png" alt="">
     </div>
     <div class="navbar">
         <a href="solicitudes.html">Mis solicitudes</a>
         <div class="dropdown">
             <button class="dropbtn navbar__nombre">Nombre y Apellido
-                <img class="icon_arrow" src="./Img/arrow_down_white_.png">
+                <img class="icon_arrow" src="../Img/arrow_down_white_.png">
             </button>
             <div class="dropdown-content">
                 <a href="login.html">Salir</a>
@@ -28,19 +28,7 @@
         <h4 class="title">Solicitud - Nombre de Solicitud</h4>
 
         <div class="contenedor">
-            <div class="div-fecha">
-                <label for="fecha">Fecha</label>
-                <input id="fecha" type="date" value="30-07-2019" name="fecha">
-            </div>
 
-            <div class="div-estado">
-                <label for="estado">Estado</label>
-                <select name="estado" class="sel">
-                    <option value="abierta">Abierta</option>
-                    <option value="en progreso">En progreso</option>
-                    <option value="cerrada">Cerrada</option>
-                </select>
-            </div>
 
             <div class="div-descripcion">
                 <label for="descripcion">Descripcion</label>
@@ -54,7 +42,8 @@
         </div>
 
     </div>
-    <script src="./Js/modificar_solicitud.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="../Js/nueva_solicitud.js"></script>
 </body>
 
 </html>
