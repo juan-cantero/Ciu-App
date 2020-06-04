@@ -4,7 +4,6 @@ const contrasenia = document.querySelector("#contrasenia");
 const alerta = document.querySelector("#alerta");
 const botonIniciar = document.getElementById("boton-iniciar");
 
-//setAyuda();
 
 botonIniciar.addEventListener("click",(event) => {
     event.preventDefault();
@@ -19,9 +18,7 @@ async function traerUsuarioDeJson() {
 
 async function iniciarSesion(){
     const user = {
-        // @ts-ignore
         usuario: usuario.value,
-        // @ts-ignore
         contrasenia: contrasenia.value
     }
 
@@ -46,17 +43,13 @@ function changePasswordStyle() {
 
 function changeAlertStyle() {
       usuario.style.borderBottom = "1px solid red";
-          // @ts-ignore
           contrasenia.style.borderBottom = "1px solid red";
 }
 
 function validarCampos(usuario, contrasenia) {
       if (usuario == "" && contrasenia == "") {
           alertaLogin("Campos vacios. Por favor,inténtelo otra vez.",changeAlertStyle);    
-          // @ts-ignore
-        //   usuario.style.borderBottom = "1px solid red";
-        //   // @ts-ignore
-        //   contrasenia.style.borderBottom = "1px solid red";
+         
         
     } 
     else if(usuario == "") {
@@ -99,10 +92,8 @@ const alertaLogin = (mensaje,next) => {
 
 const alertaUsuario = (mensaje,next) => {
     alerta.innerHTML = mensaje;
-    // @ts-ignore
     alerta.style.display = "block";
     setTimeout(() => {
-        // @ts-ignore
         alerta.style.display = "none";
     }, 3000);
 }
