@@ -56,7 +56,6 @@ function validarCampos(usuario, contrasenia) {
         alertaLogin("Debe ingresar contrasenia", changePasswordStyle)
         contrasenia.style.borderBottom = "1px solid red";
     }
-
     else return true;
 }
 
