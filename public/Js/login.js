@@ -1,3 +1,4 @@
+// @ts-nocheck
 const usuario = document.querySelector("#usuario");
 const contrasenia = document.querySelector("#contrasenia");
 const alerta = document.querySelector("#alerta");
@@ -24,25 +25,53 @@ async function iniciarSesion(){
         contrasenia: contrasenia.value
     }
 
-    if (user.usuario == "" && user.contrasenia == "") {
-        alertaLogin("Campos vacios. Por favor,inténtelo otra vez.");    
-        // @ts-ignore
-        usuario.style.borderBottom = "1px solid red";
-        // @ts-ignore
-        contrasenia.style.borderBottom = "1px solid red";
-    }
-    else {
+  
+    if (validarCampos(user.usuario, user.contrasenia)) {
         let data = await traerUsuarioDeJson();
         await guardarSolicitudes();
         await guardarNombreDeUsuario(user.usuario);
         buscarUsuario(data.usuarios, user);
     }
 }
-function validarContrasenia(contrasenia) {
-    if (contrasenia.length >= 8) {
-        
-    }
+
+function changeUserStyle () {
+    usuario.style.borderBottom = "1px solid red";
 }
+
+function changePasswordStyle() {
+    contrasenia.style.borderBottom = "1px solid red";
+
+}
+
+
+function changeAlertStyle() {
+      usuario.style.borderBottom = "1px solid red";
+          // @ts-ignore
+          contrasenia.style.borderBottom = "1px solid red";
+}
+
+function validarCampos(usuario, contrasenia) {
+      if (usuario == "" && contrasenia == "") {
+          alertaLogin("Campos vacios. Por favor,inténtelo otra vez.",changeAlertStyle);    
+          // @ts-ignore
+        //   usuario.style.borderBottom = "1px solid red";
+        //   // @ts-ignore
+        //   contrasenia.style.borderBottom = "1px solid red";
+        
+    } 
+    else if(usuario == "") {
+        alertaLogin("Debe ingresar nombre de usuario",changeUserStyle)
+        usuario.style.borderBottom = "1px solid red";
+    }
+    else if(contrasenia == "") {
+        alertaLogin("Debe ingresar contrasenia",changePasswordStyle)
+        contrasenia.style.borderBottom = "1px solid red";
+    }
+
+    else return true;
+}
+
+
 const buscarUsuario = (usuarios, user) => {
     const usuarioEncontrado = usuarios.filter(u =>
         u.usuario == user.usuario &&
@@ -50,14 +79,25 @@ const buscarUsuario = (usuarios, user) => {
     );
 
     if (usuarioEncontrado.length === 0) {
-        alertaLogin("El usuario no existe!");
+        alertaUsuario("Usuario o contraseña Incorrectos");
     } else {
         document.location.href= "solicitudes.html";
         console.log("Iniciando sesion...")
     }
 }
 
-const alertaLogin = (mensaje) => {
+const alertaLogin = (mensaje,next) => {
+    next(usuario)
+    alerta.innerHTML = mensaje;
+    // @ts-ignore
+    alerta.style.display = "block";
+    setTimeout(() => {
+        // @ts-ignore
+        alerta.style.display = "none";
+    }, 3000);
+}
+
+const alertaUsuario = (mensaje,next) => {
     alerta.innerHTML = mensaje;
     // @ts-ignore
     alerta.style.display = "block";
