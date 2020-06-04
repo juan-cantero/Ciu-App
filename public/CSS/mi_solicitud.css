@@ -9,6 +9,7 @@
 }
 
 /* Navbar logo */
+
 .logo_navbar {
     height: 70px;
     padding: 40px;
@@ -197,4 +198,37 @@ button {
     margin-top: 60px;
     float: right;
     margin-right: 90px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    #text-area {
+        width: 90%;
+    }
+    .contenedor {
+        width: 100%;
+        margin: 0;
+    }
+    .div-fecha, .div-descripcion, .div-estado {
+        margin-left: 5%;
+    }
+    .div-estado {
+        float: none;
+    }
+    .div-estado select {
+        width: 200px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    button {
+        padding: 10px 35px;
+        font-size: 10px;
+    }
+    .btns {
+        margin-top: 20px;
+        margin-right: 8%;
+        margin-bottom: 50px;
+    }
 }
