@@ -5,7 +5,7 @@ const alerta = document.querySelector("#alerta");
 const botonIniciar = document.getElementById("boton-iniciar");
 
 
-botonIniciar.addEventListener("click",(event) => {
+botonIniciar.addEventListener("click", (event) => {
     event.preventDefault();
     iniciarSesion();
 });
@@ -16,13 +16,12 @@ async function traerUsuarioDeJson() {
     return data;
 }
 
-async function iniciarSesion(){
+async function iniciarSesion() {
     const user = {
         usuario: usuario.value,
         contrasenia: contrasenia.value
     }
 
-  
     if (validarCampos(user.usuario, user.contrasenia)) {
         let data = await traerUsuarioDeJson();
         await guardarSolicitudes();
@@ -31,7 +30,7 @@ async function iniciarSesion(){
     }
 }
 
-function changeUserStyle () {
+function changeUserStyle() {
     usuario.style.borderBottom = "1px solid red";
 }
 
@@ -40,30 +39,26 @@ function changePasswordStyle() {
 
 }
 
-
 function changeAlertStyle() {
-      usuario.style.borderBottom = "1px solid red";
-          contrasenia.style.borderBottom = "1px solid red";
+    usuario.style.borderBottom = "1px solid red";
+    contrasenia.style.borderBottom = "1px solid red";
 }
 
 function validarCampos(usuario, contrasenia) {
-      if (usuario == "" && contrasenia == "") {
-          alertaLogin("Campos vacios. Por favor,inténtelo otra vez.",changeAlertStyle);    
-         
-        
-    } 
-    else if(usuario == "") {
-        alertaLogin("Debe ingresar nombre de usuario",changeUserStyle)
+    if (usuario == "" && contrasenia == "") {
+        alertaLogin("Campos vacios. Por favor,inténtelo otra vez.", changeAlertStyle);
+    }
+    else if (usuario == "") {
+        alertaLogin("Debe ingresar nombre de usuario", changeUserStyle)
         usuario.style.borderBottom = "1px solid red";
     }
-    else if(contrasenia == "") {
-        alertaLogin("Debe ingresar contrasenia",changePasswordStyle)
+    else if (contrasenia == "") {
+        alertaLogin("Debe ingresar contrasenia", changePasswordStyle)
         contrasenia.style.borderBottom = "1px solid red";
     }
 
     else return true;
 }
-
 
 const buscarUsuario = (usuarios, user) => {
     const usuarioEncontrado = usuarios.filter(u =>
@@ -72,14 +67,14 @@ const buscarUsuario = (usuarios, user) => {
     );
 
     if (usuarioEncontrado.length === 0) {
-        alertaUsuario("Usuario o contraseña Incorrectos");
+        alertaUsuario("Usuario y/o contraseña Incorrectos");
     } else {
-        document.location.href= "solicitudes.html";
+        document.location.href = "solicitudes.html";
         console.log("Iniciando sesion...")
     }
 }
 
-const alertaLogin = (mensaje,next) => {
+const alertaLogin = (mensaje, next) => {
     next(usuario)
     alerta.innerHTML = mensaje;
     // @ts-ignore
@@ -90,7 +85,7 @@ const alertaLogin = (mensaje,next) => {
     }, 3000);
 }
 
-const alertaUsuario = (mensaje,next) => {
+const alertaUsuario = (mensaje, next) => {
     alerta.innerHTML = mensaje;
     alerta.style.display = "block";
     setTimeout(() => {
@@ -106,44 +101,17 @@ async function traerSolicitudesDeJson() {
 
 async function guardarSolicitudes() {
     const data = await traerSolicitudesDeJson()
-    window.localStorage.setItem('solicitudes',JSON.stringify(data));
-    
+    window.localStorage.setItem('solicitudes', JSON.stringify(data));
 }
 
 async function guardarNombreDeUsuario(nombreAGuardar) {
     const data = await traerUsuarioDeJson();
-    const users = data.usuarios.filter(u => u.usuario === nombreAGuardar);
-    const {usuario} = users[0];
-    window.localStorage.setItem('nombreUsuario',usuario);
+    const user = data.usuarios.find(u => u.usuario === nombreAGuardar);
+    console.log(user);
+
+    if(user != undefined){
+        window.localStorage.setItem('nombreUsuario', user.usuario);
+    }else{
+        console.log("Usuario no encontrado")
+    }
 }
-
-
-
-
-
-
-
-
-
-// function mostrarAyuda(ayuda) {
-//     document.getElementById('ayuda').innerHTML = ayuda;
-// }
-
-// function makeHelpCallback(ayuda) {
-//     return function () {
-//         mostrarAyuda(ayuda);
-//     };
-// }
-
-// function setAyuda() {
-//     var textoAyuda = [
-//         { 'id': 'usuario', 'ayuda': 'Ingrese su usuario' },
-//         { 'id': 'contrasenia', 'ayuda': 'Ingrese su contraseña' }
-//     ];
-
-//     for (var i = 0; i < textoAyuda.length; i++) {
-//         var item = textoAyuda[i];
-//         document.getElementById(item.id).onfocus = makeHelpCallback(item.ayuda);
-//     }
-// }
-
