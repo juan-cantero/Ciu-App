@@ -214,3 +214,75 @@ button {
     background-color: white;
     border:1px solid;
 }
+
+
+@media (max-width: 375px) {
+    .tabla-container  {
+    width: 350px;
+    padding: 1px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 20px;
+
+}
+
+
+.solicitudes-tabla {
+    /* hace que los bordes se unan asi se ve como una tabla */
+    border-collapse: collapse;
+    width: 350px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: auto;
+    display: block-inline;
+}
+
+.solicitudes-tabla tr:nth-child(even) {background-color: #f2f2f2;}
+
+.solicitudes-tabla th  {
+    border: 1px solid black;
+    height: 50%;
+    width: 25%;
+    vertical-align:middle ;
+    text-align: left;
+    padding: 0px 1px;
+    word-break: break-all;
+    font-size:12px ;
+    
+    
+}
+
+.solicitudes-tabla td {
+    border: 1px solid black;
+    height: 30px;
+    width: 25%;
+    vertical-align:middle ;
+    text-align: lef;
+    padding:0px 1px ;
+    word-break: break-all;
+    font-size: 12px;
+}
+
+.botones-box {
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+button {
+    border: none;
+    color:white;
+    font-size: bold;
+    padding: 12px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor:pointer;
+}
+
+
+
+}

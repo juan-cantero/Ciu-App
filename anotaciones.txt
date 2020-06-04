@@ -61,3 +61,11 @@ ademas por valores
 
 var estado = "lo que sea"
 document.querySelector('.sel [value="'+estado+'"');
+
+
+# Lo que hice para arreglar la tabla despues del mediaquery
+
+El tamaño de cada celda sumados sobrepasaban el ancho de la tabla 
+tuve que hacer que la tabla tenga display:bolck para que encajen en el mismo elemento
+y tuve que usar word-break: break-all para cada celda, eso hace que las palabras lleguen
+hasta el borde de cada celda y siguen abajo
