@@ -6,6 +6,7 @@ body{
     font-family: sans-serif;
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,1) 63%, rgba(34,195,43,1) 100%); 
+    background-repeat: no-repeat;
 }
     
 .unahur-logo {
