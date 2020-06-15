@@ -64,10 +64,10 @@ botonModificar.addEventListener("click", async (e) => {
     solicitudParaActualizar = await getSolicitudChequeada()
     console.log("Soli para actualizar")
     console.log(solicitudParaActualizar)
-    if (solicitudParaActualizar.length > 0) { 
-    window.localStorage.setItem('solicitudParaActualizar', JSON.stringify(solicitudParaActualizar));
-    document.location.href = "modificar_solicitud.html"
-    }else{
+    if (solicitudParaActualizar.length > 0) {
+        window.localStorage.setItem('solicitudParaActualizar', JSON.stringify(solicitudParaActualizar));
+        document.location.href = "modificar_solicitud.html"
+    } else {
         alert("Debes seleccionar una solicitud para editar")
     }
 })
@@ -76,12 +76,12 @@ const botonBorrar = document.querySelector('#Borrar');
 botonBorrar.addEventListener('click', async (e) => {
     e.preventDefault();
     let solicitudParaBorrar = await getSolicitudChequeada();
-    if(solicitudParaBorrar.length > 0){
+    if (solicitudParaBorrar.length > 0) {
         let index = solicitudes.findIndex(solicitud => solicitud.id === solicitudParaBorrar[0].id);
         solicitudes.splice(index, 1);
         window.localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
         main()
-    }else{
+    } else {
         alert("Debes seleccionar una solicitud para borrar")
     }
 })

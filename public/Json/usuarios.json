@@ -2,15 +2,21 @@
     "usuarios":[
         {
             "usuario":"Magui",
-            "contrasenia":1234
+            "contrasenia":1234,
+            "activo": true,
+            "avatar": "avatar1"
         },
         {
             "usuario":"Joni",
-            "contrasenia":5678
+            "contrasenia":5678,
+            "activo":false,
+            "avatar":"avatar2"
         },
         {
             "usuario":"juan",
-            "contrasenia":1234
+            "contrasenia":1234,
+            "activo": false,
+            "avatar":"avatar3"
         }
     ]
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/solicitudes.style.css">
+    <title>Lista de usuarios</title>
+</head>
+
+<body>
+    <div class="logo_navbar">
+        <img src="../Img/logo_unahur.png" alt="">
+    </div>
+    <div class="navbar">
+        <a href="inicio.html">Inicio</a>
+        <a href="solicitudes.html">Mis solicitudes</a>
+        <a href="usuarios.html" class="item-selected">Usuarios</a>
+        <div class="dropdown">
+            <button class="dropbtn navbar__nombre">Nombre y Apellido
+                <img class="icon_arrow" src="../Img/arrow_down_white_.png">
+            </button>
+            <div class="dropdown-content">
+                <a href="login.html">Salir</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tabla-container">
+        <table class="usuarios-tabla"></table>
+
+        <div class="botones-box">
+            <button id="Nueva" class="botones-box__nueva-solicitud">Nueva</button>
+            <button id="Modificar" class="botones-box__modificar-solicitud">Modificar</button>
+            <button id="Borrar" class="botones-box__borrar-solicitud">Borrar</button>
+            <div />
+        </div>
+
+        <!-- <script src="../Js/solicitudes.js"></script> -->
+        <script src="../Js/usuarios.js"></script>
+</body>
+
+</html>

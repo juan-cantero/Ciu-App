@@ -1,0 +1,34 @@
+.mensaje-bienvenida{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #40F249;
+    border: none;
+}
+
+.mensaje-bienvenida h1{
+    font-size: 400%;
+    color: #333;
+}
+
+.mensaje-bienvenida .logo-bienvenida{
+    width: 50px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .mensaje-bienvenida{
+        width: 85%;
+        margin-top: 20px;
+    }
+    .mensaje-bienvenida h1{
+        font-size: 25px;
+    }
+    .mensaje-bienvenida .logo-bienvenida{
+        width: 25px;
+    }
+
+}
+

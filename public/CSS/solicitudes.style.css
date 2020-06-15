@@ -11,6 +11,7 @@
 }
 
 /* Navbar logo */
+
 .logo_navbar {
     height: 70px;
     padding: 40px;
@@ -29,7 +30,7 @@
 
 .navbar a {
     float: left;
-    font-size: 16px;
+    font-size: 18.5px;
     color: white;
     text-align: center;
     padding: 20px 16px;
@@ -47,7 +48,7 @@
 /* Dropdown button */
 
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 18.5px;
     border: none;
     outline: none;
     color: white;
@@ -62,6 +63,10 @@
 /* Add a red background color to navbar links on hover */
 
 .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #1a9100;
+}
+
+.item-selected {
     background-color: #1a9100;
 }
 
@@ -130,40 +135,43 @@ label {
     box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 /* ------------------------------------------tabla-------------------------------------- */
+
 .tabla-container {
     width: 75%;
     padding: 20px;
     border-top: 20px;
     text-align: center;
 }
-.solicitudes-tabla {
+
+.solicitudes-tabla, .usuarios-tabla {
     /* hace que los bordes se unan asi se ve como una tabla */
     border-collapse: collapse;
     width: 100%;
 }
 
-.solicitudes-tabla tr:nth-child(even) {background-color: #f2f2f2;}
+.solicitudes-tabla tr:nth-child(even), .usuarios-tabla tr:nth-child(even){
+    background-color: #f2f2f2;
+}
 
-.solicitudes-tabla th  {
+.solicitudes-tabla th, .usuarios-tabla th{
     border: 1px solid black;
     height: 50%;
-    vertical-align:middle ;
+    vertical-align: middle;
     text-align: left;
     padding: 15px;
 }
 
-.solicitudes-tabla td {
+.solicitudes-tabla td, .usuarios-tabla td {
     border: 1px solid black;
     height: 50px;
-    vertical-align:middle ;
+    vertical-align: middle;
     padding: 15px;
     text-align: left;
 }
 
-
 /* -----------------------------------------botones------------------------------------------- */
+
 .botones-box {
     margin-top: 20px;
     text-align: right;
@@ -172,7 +180,7 @@ label {
 
 button {
     border: none;
-    color:white;
+    color: white;
     font-size: bold;
     padding: 12px 40px;
     text-align: center;
@@ -181,7 +189,7 @@ button {
     font-size: 16px;
     border-radius: 4px;
     margin-left: 20px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .botones-box__nueva-solicitud {
@@ -199,90 +207,81 @@ button {
 .botones-box__nueva-solicitud:hover {
     color: #4CAF50;
     background-color: white;
-    border:1px solid;
+    border: 1px solid;
 }
 
 .botones-box__modificar-solicitud:hover {
     color: rgb(41, 41, 41);
     background-color: white;
-    border:1px solid;
-
+    border: 1px solid;
 }
 
 .botones-box__borrar-solicitud:hover {
     color: rgb(248, 83, 111);
     background-color: white;
-    border:1px solid;
+    border: 1px solid;
 }
-
 
 @media (max-width: 375px) {
-    .tabla-container  {
-    width: 350px;
-    padding: 1px;
-    text-align: center;
-    box-sizing: border-box;
-    margin-top: 20px;
+    .tabla-container {
+        width: 350px;
+        padding: 1px;
+        text-align: center;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+    .solicitudes-tabla {
+        /* hace que los bordes se unan asi se ve como una tabla */
+        border-collapse: collapse;
+        width: 350px;
+        position: relative;
+        box-sizing: border-box;
+        overflow: auto;
+        display: block-inline;
+    }
+    .solicitudes-tabla tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .solicitudes-tabla th {
+        border: 1px solid black;
+        height: 50%;
+        width: 25%;
+        vertical-align: middle;
+        text-align: left;
+        padding: 0px 1px;
+        word-break: break-all;
+        font-size: 12px;
+    }
+    .solicitudes-tabla td {
+        border: 1px solid black;
+        height: 30px;
+        width: 25%;
+        vertical-align: middle;
+        text-align: lef;
+        padding: 0px 1px;
+        word-break: break-all;
+        font-size: 12px;
+    }
+    .botones-box {
+        margin-top: 20px;
+        text-align: right;
+        margin-right: 5px;
+    }
+    button {
+        border: none;
+        color: white;
+        font-size: bold;
+        padding: 12px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        border-radius: 4px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
 
-}
-
-
-.solicitudes-tabla {
-    /* hace que los bordes se unan asi se ve como una tabla */
-    border-collapse: collapse;
-    width: 350px;
-    position: relative;
-    box-sizing: border-box;
-    overflow: auto;
-    display: block-inline;
-}
-
-.solicitudes-tabla tr:nth-child(even) {background-color: #f2f2f2;}
-
-.solicitudes-tabla th  {
-    border: 1px solid black;
-    height: 50%;
-    width: 25%;
-    vertical-align:middle ;
-    text-align: left;
-    padding: 0px 1px;
-    word-break: break-all;
-    font-size:12px ;
-    
-    
-}
-
-.solicitudes-tabla td {
-    border: 1px solid black;
-    height: 30px;
-    width: 25%;
-    vertical-align:middle ;
-    text-align: lef;
-    padding:0px 1px ;
-    word-break: break-all;
-    font-size: 12px;
-}
-
-.botones-box {
-    margin-top: 20px;
-    text-align: right;
-    margin-right: 5px;
-}
-
-button {
-    border: none;
-    color:white;
-    font-size: bold;
-    padding: 12px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    border-radius: 4px;
-    margin-left: 10px;
-    cursor:pointer;
-}
-
-
-
+    .navbar a{
+        font-size: 15.5px;
+    }
 }

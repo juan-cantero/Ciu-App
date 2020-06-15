@@ -68,7 +68,7 @@ const buscarUsuario = (usuarios, user) => {
     if (usuarioEncontrado.length === 0) {
         alertaUsuario("Usuario y/o contraseña Incorrectos");
     } else {
-        document.location.href = "solicitudes.html";
+        document.location.href = "inicio.html";
         console.log("Iniciando sesion...")
     }
 }
