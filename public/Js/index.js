@@ -1,4 +1,4 @@
-// window.onload = (e) => {
-//     document.location.href="/public/html/login.html"
+window.onload = (e) => {
+    document.location.href="/public/html/inicio.html"
     
-// }
+}
