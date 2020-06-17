@@ -51,7 +51,7 @@ class UserForm {
     return this.formUI.estadoElement.value
   }
 
-  enviar = async ()=> {
+  enviar =  ()=> {
     const usuario = {
       fecha : this.fecha,
       avatar:this.avatar,
@@ -60,7 +60,7 @@ class UserForm {
       activo:this.estado,
       checked:false
     }
-    let usuarios = await traerUsuarios()
+    let usuarios =  traerUsuarios()
     usuarios.push(usuario)
     console.log(usuarios)
     window.localStorage.setItem('usuarios',JSON.stringify(usuarios))
@@ -75,7 +75,7 @@ class UserForm {
   }
 }
 
-async function traerUsuarios() {
+ function traerUsuarios() {
     const usuariosJson = window.localStorage.getItem('usuarios')
     const usuarios = JSON.parse(usuariosJson)
     return usuarios;
