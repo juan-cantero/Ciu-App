@@ -20,8 +20,8 @@ class formUI {
     return document.querySelector('#estado')
   }
   
-  get formularioElement() {
-    return document.querySelector('.formulario')
+  get enviarElement() {
+    return document.querySelector('.guardar')
   }
 }
 
@@ -68,7 +68,7 @@ class UserForm {
   }
 
   addEventListeners() {
-    this.formUI.formularioElement.addEventListener('submit',(e)=>{
+    this.formUI.enviarElement.addEventListener('click',(e)=>{
       e.preventDefault()
       this.enviar()
     })
