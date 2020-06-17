@@ -6,7 +6,9 @@
 
 window.onload = () => {
     guardarUsuarios()
+    guardarSolicitudes()
     renderNombreUsuario()
+
 }
 
 function renderNombreUsuario() {
@@ -25,4 +27,15 @@ async function guardarUsuarios() {
     const data = await traerUsuariosDelJSON();
     const {usuarios} = data
     window.localStorage.setItem('usuarios',JSON.stringify(usuarios))
+}
+
+async function traerSolicitudesDeJson() {
+    const response = await fetch('../Json/solicitudes.json');
+    const data = await response.json();
+    return data;
+}
+
+async function guardarSolicitudes() {
+    const data = await traerSolicitudesDeJson()
+    window.localStorage.setItem('solicitudes', JSON.stringify(data));
 }

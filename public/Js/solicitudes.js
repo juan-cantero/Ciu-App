@@ -3,16 +3,7 @@
 var solicitudParaActualizar;
 var solicitudes;
 
-async function traerSolicitudesDeJson() {
-    const response = await fetch('../Json/solicitudes.json');
-    const data = await response.json();
-    return data;
-}
 
-async function guardarSolicitudes() {
-    const data = await traerSolicitudesDeJson()
-    window.localStorage.setItem('solicitudes', JSON.stringify(data));
-}
 
 async function traerSolicitudes() {
     const solicitudesString = window.localStorage.getItem('solicitudes');
@@ -103,8 +94,8 @@ function renderNombreUsuario() {
 }
 
 async function main() {
-    await guardarSolicitudes()
     solicitudes = await traerSolicitudes()
+    console.log(solicitudes)
     await renderSolicitudes()
 }
 

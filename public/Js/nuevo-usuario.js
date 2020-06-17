@@ -69,8 +69,8 @@ class UserForm {
 
   addEventListeners() {
     this.formUI.enviarElement.addEventListener('click',(e)=>{
-      e.preventDefault()
       this.enviar()
+      e.preventDefault()
     })
   }
 }

@@ -24,8 +24,9 @@ function guardarSolicitud() {
         estado: "abierta",
         checked: false
     }
-
+    
     solicitudes.push(solicitud);
+    
 
     window.localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
     document.location.href = "solicitudes.html"
