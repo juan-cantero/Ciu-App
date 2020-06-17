@@ -19,14 +19,14 @@ botonNuevoUsuario.addEventListener('click',(e)=> {
  function getUsuarioCheckeado() {
     // @ts-ignore
     let checkboxes = document.querySelectorAll('.usuario-tabla-checked');
-    let data = usuarios
+    let data = traerUsuarios()
 
     for (let i = 0; i < checkboxes.length; i++)
         data[i].checked = checkboxes[i].checked
 
     let usuarioCheckeado = data.filter(d => d.checked);
     if (usuarioCheckeado.length > 1) {
-        alert("Debe seleccionar solo una solicitud")
+        alert("Debe seleccionar solo un usuario")
         return null;
     }
     else {
@@ -41,7 +41,7 @@ function guardarUsuarioAModificar() {
         document.location.href = 'modificar_usuario.html'
     }
     else {
-        alert('Debe seleccionar un usuario')
+        alert('Debe seleccionar al menos  un usuario')
     }
 }
 
@@ -55,9 +55,34 @@ botonModificar.addEventListener('click',(e)=> {
 })
 
 
+function borrarUsuario() {
+    const usuarioABorrar = getUsuarioCheckeado()
+    const listaUsuarios = traerUsuarios()
+
+    if(usuarioABorrar.length > 1) {
+        alert("No puede seleccionar mas de un usuario")
+    }
+    else {
+        const index = listaUsuarios.indexOf(u => u.usuario 
+                                                === Number(usuarioABorrar[0].usuario))
+        listaUsuarios.splice(index,1)
+        window.localStorage.setItem('usuarios',JSON.stringify(listaUsuarios)) 
+        renderUsuarios()                                       
+
+    }
+}
+
+const botonBorrar = document.querySelector('#Borrar')
+botonBorrar.addEventListener('click',(e)=>{
+    e.preventDefault()
+    borrarUsuario()
+})
+
+
 
 async function renderUsuarios() {
-    const usuarios =  traerUsuarios();
+    const Listausuarios =  traerUsuarios();
+    console.log(Listausuarios)
     let table = `<tr>
                     <th>Nombre</th>
                     <th>Avatar</th>
@@ -66,7 +91,7 @@ async function renderUsuarios() {
                     <th>Seleccion</th>
 
                 </tr>`;
-    usuarios.forEach((usuario) => {
+    Listausuarios.forEach((usuario) => {
 
         table += `
                 <tr>
