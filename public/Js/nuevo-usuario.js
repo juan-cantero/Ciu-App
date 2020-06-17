@@ -1,4 +1,6 @@
 // @ts-nocheck
+var usuarios = traerUsuarios();
+
 class formUI {
   get fechaPicker(){
     return document.querySelector('#fecha')
@@ -51,7 +53,7 @@ class UserForm {
     return this.formUI.estadoElement.value
   }
 
-  enviar =  ()=> {
+  enviar() {
     const usuario = {
       fecha : this.fecha,
       avatar:this.avatar,
@@ -60,7 +62,7 @@ class UserForm {
       activo:this.estado,
       checked:false
     }
-    let usuarios =  traerUsuarios()
+    
     usuarios.push(usuario)
     console.log(usuarios)
     window.localStorage.setItem('usuarios',JSON.stringify(usuarios))
@@ -69,8 +71,8 @@ class UserForm {
 
   addEventListeners() {
     this.formUI.enviarElement.addEventListener('click',(e)=>{
-      this.enviar()
       e.preventDefault()
+      this.enviar()
     })
   }
 }
@@ -81,5 +83,7 @@ class UserForm {
     return usuarios;
 
 }
+
+
 
 const userForm = new UserForm();
