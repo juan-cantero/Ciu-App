@@ -1,6 +1,7 @@
 // @ts-nocheck
 //var solicitudParaActualizar;
-var usuarios;
+var usuarios = traerUsuarios();
+var usuarioAModificar
 
 const botonNuevoUsuario = document.querySelector('#Nuevo');
 botonNuevoUsuario.addEventListener('click',(e)=> {
@@ -8,14 +9,14 @@ botonNuevoUsuario.addEventListener('click',(e)=> {
     document.location.href = 'nuevo-usuario.html'
 })
 
-async function traerUsuarios() {
+ function traerUsuarios() {
     const usuariosJson = window.localStorage.getItem('usuarios')
     const usuarios = JSON.parse(usuariosJson)
     return usuarios;
 
 }
 
-async function getUsuarioCheckeado() {
+ function getUsuarioCheckeado() {
     // @ts-ignore
     let checkboxes = document.querySelectorAll('.usuario-tabla-checked');
     let data = usuarios
@@ -33,10 +34,30 @@ async function getUsuarioCheckeado() {
     }
 }
 
+function guardarUsuarioAModificar() {
+    usuarioAModificar = getUsuarioCheckeado()
+    if(usuarioAModificar.length > 0) {
+        window.localStorage.setItem('usuarioAModificar',JSON.stringify(usuarioAModificar))
+        document.location.href = 'modificar_usuario.html'
+    }
+    else {
+        alert('Debe seleccionar un usuario')
+    }
+}
+
+
+
+const botonModificar = document.querySelector('#Modificar');
+botonModificar.addEventListener('click',(e)=> {
+    e.preventDefault()
+    guardarUsuarioAModificar()
+
+})
+
 
 
 async function renderUsuarios() {
-    const usuarios = await traerUsuarios();
+    const usuarios =  traerUsuarios();
     let table = `<tr>
                     <th>Nombre</th>
                     <th>Avatar</th>

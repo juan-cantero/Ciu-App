@@ -4,7 +4,7 @@
             "usuario":"Magui",
             "contrasenia":1234,
             "activo": "si",
-            "avatar": "avatar1",
+            "avatar": "http:avatar1",
             "fecha":"2019-07-30",
             "checked":false
             
@@ -13,7 +13,7 @@
             "usuario":"Joni",
             "contrasenia":5678,
             "activo":"no",
-            "avatar":"avatar2",
+            "avatar":"http:avatar2",
             "fecha":"2019-07-30",
             "checked":false
 
@@ -22,7 +22,7 @@
             "usuario":"juan",
             "contrasenia":1234,
             "activo": "si",
-            "avatar":"avatar3",
+            "avatar":"http:avatar3",
             "fecha":"2019-07-30",
             "checked":false
         }

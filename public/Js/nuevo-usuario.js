@@ -25,12 +25,16 @@ class formUI {
   get enviarElement() {
     return document.querySelector('.guardar')
   }
+  get cancelarElement() {
+    return document.querySelector('.cancelar')
+  }
 }
 
 
 class UserForm {
-  constructor(){
-    this.formUI = new formUI()
+  constructor(formUI,usuarios){
+    this.formUI = formUI
+    this.usuarios = usuarios
     this.addEventListeners()
   }
   get fecha() {
@@ -63,7 +67,7 @@ class UserForm {
       checked:false
     }
     
-    usuarios.push(usuario)
+    this.usuarios.push(usuario)
     console.log(usuarios)
     window.localStorage.setItem('usuarios',JSON.stringify(usuarios))
     document.location.href="usuarios.html"
@@ -73,6 +77,11 @@ class UserForm {
     this.formUI.enviarElement.addEventListener('click',(e)=>{
       e.preventDefault()
       this.enviar()
+    })
+
+    this.formUI.cancelarElement.addEventListener('click',(e)=>{
+      e.preventDefault();
+      document.location.href = "usuarios.html"
     })
   }
 }
@@ -86,4 +95,4 @@ class UserForm {
 
 
 
-const userForm = new UserForm();
+const userForm = new UserForm(new formUI(),usuarios);
