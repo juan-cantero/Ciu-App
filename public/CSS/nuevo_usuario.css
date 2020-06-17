@@ -1,0 +1,42 @@
+
+.formulario-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40vw;
+  height: 70vh;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.formulario {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 2%;
+}
+
+.form-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.form-data label {
+  align-self: center;
+}
+
+#fecha {
+  align-self: center;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+}

@@ -4,11 +4,25 @@
 
 // }
 
-window.onload = (e) => {
+window.onload = () => {
+    guardarUsuarios()
     renderNombreUsuario()
 }
 
 function renderNombreUsuario() {
     const nombreUsuario = window.localStorage.getItem('nombreUsuario')
     document.querySelector(".navbar__nombre").textContent = nombreUsuario;
+
+}
+
+async function traerUsuariosDelJSON() {
+    const response = await fetch('../Json/usuarios.json');
+    const data = await response.json()
+    return data;
+}
+
+async function guardarUsuarios() {
+    const data = await traerUsuariosDelJSON();
+    const {usuarios} = data
+    window.localStorage.setItem('usuarios',JSON.stringify(usuarios))
 }

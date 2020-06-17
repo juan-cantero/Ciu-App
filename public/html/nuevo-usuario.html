@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Usuario</title>
+  <link rel="stylesheet" href="../CSS/mi_solicitud.css">
+  <link rel="stylesheet" href="../CSS/nuevo_usuario.css">
+</head>
+
+<body>
+  <div class="logo_navbar">
+    <img src="../Img/logo_unahur.png" alt="">
+  </div>
+  <div class="navbar">
+    <a href="solicitudes.html">Mis solicitudes</a>
+    <a href="usuarios.html">Usuarios</a>
+    <a href="inicio.html">Salir</a>
+  </div>
+  </div>
+
+  <div>
+    <h4 class="title">Usuario - Nombre de Usuario</h4>
+
+    <div class="formulario-container">
+      <form action="" class="formulario">
+        <div class="form-data">
+          <label for="fecha">Fecha</label>
+          <input id="fecha" type="date" value="30-07-2019" name="fecha">
+        </div>
+        <div class="form-data">
+          <label for="avatar">Avatar</label>
+          <input type="url" name="avatar" id="avatar">
+        </div>
+        <div class="form-data">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre">
+        </div>
+        <div class="form-data">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+        </div>
+        <div class="form-data">
+          <label for="estado">Estado</label>
+          <select name="Activo" id="estado">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="botones">
+          <button class="guardar">Enviar</button>
+          <button class="cancelar ">Cancelar</button>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+  <script src="../Js/nuevo-usuario.js" />
+  </body>
+
+</html>
