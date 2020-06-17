@@ -22,11 +22,14 @@ async function iniciarSesion() {
         contrasenia: contrasenia.value
     }
 
-    if (validarCampos(user.usuario, user.contrasenia)) {
+    if (validarCamposNulos(user.usuario, user.contrasenia) &&
+        validarCampoUsuario(user.usuario) && validarCampoContrasenia(user.contrasenia)) {
         let data = await traerUsuarioDeJson();
         await guardarSolicitudes();
         await guardarNombreDeUsuario(user.usuario);
         buscarUsuario(data.usuarios, user);
+    }else{
+        alertaLogin("Contraseña invalida! Debe haber al menos una letra y un número",changePasswordStyle)
     }
 }
 
@@ -36,7 +39,6 @@ function changeUserStyle() {
 
 function changePasswordStyle() {
     contrasenia.style.borderBottom = "1px solid red";
-
 }
 
 function changeAlertStyle() {
@@ -44,7 +46,7 @@ function changeAlertStyle() {
     contrasenia.style.borderBottom = "1px solid red";
 }
 
-function validarCampos(usuario, contrasenia) {
+function validarCamposNulos(usuario, contrasenia) {
     if (usuario == "" && contrasenia == "") {
         alertaLogin("Campos vacios. Por favor,inténtelo otra vez.", changeAlertStyle);
     }
@@ -57,6 +59,42 @@ function validarCampos(usuario, contrasenia) {
         contrasenia.style.borderBottom = "1px solid red";
     }
     else return true;
+}
+
+function validarCampoUsuario(usuario) {
+    if (usuario.length != 8) {
+        alertaLogin("El usuario debe contener 8 caracteres!", changeUserStyle)
+    } else {
+        return true;
+    }
+}
+
+function validarCaracter(caracter, inicio, fin) {
+    return (caracter >= inicio) && (caracter <= fin)
+}
+
+function validarCampoContrasenia(contrasenia) {
+    let esLetra = false;
+    let esNumero = false;
+
+    if (contrasenia.length <= 6) {
+        for (var i = 0; i < contrasenia.length; i++) {
+            caracter = contrasenia.charCodeAt(i);
+            // console.log("Tiene numero");
+            // console.log(caracter)
+            // console.log(validarCaracter(caracter, 48, 57));
+            // console.log("Tiene letra minuscula");
+            // console.log(caracter)
+            // console.log(validarCaracter(caracter, 97, 122));
+
+            if (validarCaracter(caracter, 97, 122)) {
+                esLetra = true;
+            } else if (validarCaracter(caracter, 48, 57)) {
+                esNumero = true
+            }
+        }
+    }
+    return esNumero && esLetra;
 }
 
 const buscarUsuario = (usuarios, user) => {
@@ -108,9 +146,9 @@ async function guardarNombreDeUsuario(nombreAGuardar) {
     const user = data.usuarios.find(u => u.usuario === nombreAGuardar);
     console.log(user);
 
-    if(user != undefined){
+    if (user != undefined) {
         window.localStorage.setItem('nombreUsuario', user.usuario);
-    }else{
+    } else {
         console.log("Usuario no encontrado")
     }
 }

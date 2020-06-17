@@ -1,8 +1,8 @@
 {
     "usuarios":[
         {
-            "usuario":"Magui",
-            "contrasenia":1234,
+            "usuario":12345678,
+            "contrasenia":"12ab",
             "activo": "si",
             "avatar": "http:avatar1",
             "fecha":"2019-07-30",
@@ -10,8 +10,8 @@
             
         },
         {
-            "usuario":"Joni",
-            "contrasenia":5678,
+            "usuario":87654321,
+            "contrasenia":"12ab",
             "activo":"no",
             "avatar":"http:avatar2",
             "fecha":"2019-07-30",
@@ -19,8 +19,8 @@
 
         },
         {
-            "usuario":"juan",
-            "contrasenia":1234,
+            "usuario":98765432,
+            "contrasenia":"12ab",
             "activo": "si",
             "avatar":"http:avatar3",
             "fecha":"2019-07-30",

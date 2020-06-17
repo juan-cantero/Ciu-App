@@ -30,7 +30,6 @@ class formUI {
   }
 }
 
-
 class UserForm {
   constructor(formUI,usuarios){
     this.formUI = formUI
