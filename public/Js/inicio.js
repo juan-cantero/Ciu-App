@@ -8,7 +8,6 @@ window.onload = () => {
     guardarUsuarios()
     guardarSolicitudes()
     renderNombreUsuario()
-
 }
 
 function renderNombreUsuario() {

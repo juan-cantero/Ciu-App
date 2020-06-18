@@ -91,12 +91,14 @@ botonBorrar.addEventListener('click', async (e) => {
 function renderNombreUsuario() {
     const nombreUsuario = window.localStorage.getItem('nombreUsuario')
     document.querySelector(".navbar__nombre").textContent = nombreUsuario;
+    console.log(nombreUsuario);
 }
 
 async function main() {
     solicitudes = await traerSolicitudes()
     console.log(solicitudes)
     await renderSolicitudes()
+    renderNombreUsuario();
 }
 
 main()

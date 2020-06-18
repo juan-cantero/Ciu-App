@@ -4,19 +4,19 @@ var usuarios = traerUsuarios();
 var usuarioAModificar
 
 const botonNuevoUsuario = document.querySelector('#Nuevo');
-botonNuevoUsuario.addEventListener('click',(e)=> {
+botonNuevoUsuario.addEventListener('click', (e) => {
     e.preventDefault()
     document.location.href = 'nuevo-usuario.html'
 })
 
- function traerUsuarios() {
+function traerUsuarios() {
     const usuariosJson = window.localStorage.getItem('usuarios')
     const usuarios = JSON.parse(usuariosJson)
     return usuarios;
 
 }
 
- function getUsuarioCheckeado() {
+function getUsuarioCheckeado() {
     // @ts-ignore
     let checkboxes = document.querySelectorAll('.usuario-tabla-checked');
     let data = traerUsuarios()
@@ -36,8 +36,8 @@ botonNuevoUsuario.addEventListener('click',(e)=> {
 
 function guardarUsuarioAModificar() {
     usuarioAModificar = getUsuarioCheckeado()
-    if(usuarioAModificar.length > 0) {
-        window.localStorage.setItem('usuarioAModificar',JSON.stringify(usuarioAModificar))
+    if (usuarioAModificar.length > 0) {
+        window.localStorage.setItem('usuarioAModificar', JSON.stringify(usuarioAModificar))
         document.location.href = 'modificar_usuario.html'
     }
     else {
@@ -45,43 +45,37 @@ function guardarUsuarioAModificar() {
     }
 }
 
-
-
 const botonModificar = document.querySelector('#Modificar');
-botonModificar.addEventListener('click',(e)=> {
+botonModificar.addEventListener('click', (e) => {
     e.preventDefault()
     guardarUsuarioAModificar()
-
 })
-
 
 function borrarUsuario() {
     const usuarioABorrar = getUsuarioCheckeado()
     const listaUsuarios = traerUsuarios()
 
-    if(usuarioABorrar.length > 1) {
+    if (usuarioABorrar.length > 1) {
         alert("No puede seleccionar mas de un usuario")
     }
     else {
-        const index = listaUsuarios.indexOf(u => u.usuario 
-                                                === Number(usuarioABorrar[0].usuario))
-        listaUsuarios.splice(index,1)
-        window.localStorage.setItem('usuarios',JSON.stringify(listaUsuarios)) 
-        renderUsuarios()                                       
-
+        const index = listaUsuarios.indexOf(u => u.usuario
+            === Number(usuarioABorrar[0].usuario))
+        listaUsuarios.splice(index, 1)
+        window.localStorage.setItem('usuarios', JSON.stringify(listaUsuarios))
+        renderUsuarios()
     }
 }
 
 const botonBorrar = document.querySelector('#Borrar')
-botonBorrar.addEventListener('click',(e)=>{
+botonBorrar.addEventListener('click', (e) => {
     e.preventDefault()
     borrarUsuario()
 })
 
 
-
 async function renderUsuarios() {
-    const Listausuarios =  traerUsuarios();
+    const Listausuarios = traerUsuarios();
     console.log(Listausuarios)
     let table = `<tr>
                     <th>Nombre</th>
@@ -95,7 +89,7 @@ async function renderUsuarios() {
 
         table += `
                 <tr>
-                    <td>${usuario.usuario}</td>
+                    <td>${usuario.nombre}</td>
                     <td>${usuario.avatar}</td>
                     <td>${usuario.fecha}</td>
                     <td>${usuario.activo}</td>
@@ -107,5 +101,11 @@ async function renderUsuarios() {
     document.querySelector('.usuarios-tabla').innerHTML = table;
 }
 
+function renderNombreUsuario() {
+    const nombreUsuario = window.localStorage.getItem('nombreUsuario')
+    document.querySelector(".navbar__nombre").textContent = nombreUsuario;
+    console.log(nombreUsuario);
+}
 
 renderUsuarios();
+renderNombreUsuario();
