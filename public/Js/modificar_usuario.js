@@ -5,7 +5,7 @@ const formularioUI = new formUI()
 const formulario = new UserForm(formularioUI,usuarios)
 
 
- function traerUsuarios() {
+function traerUsuarios() {
     const usuariosJson = window.localStorage.getItem('usuarios')
     const usuarios = JSON.parse(usuariosJson)
     return usuarios;
@@ -16,7 +16,6 @@ function getUsuarioAModificar() {
   const usuarioAModifiCarJson = window.localStorage.getItem('usuarioAModificar')
   const  usuarioAModificar = JSON.parse(usuarioAModifiCarJson);
   return usuarioAModificar
-
 }
 
 function renderUsuario() {
@@ -29,4 +28,10 @@ function renderUsuario() {
   formularioUI.estadoElement.value = estado;
 }
 
+function renderNombreUsuario() {
+  const nombreUsuario = window.localStorage.getItem('nombreUsuario')
+  document.querySelector(".navbar__nombre").textContent = nombreUsuario;
+}
+
 renderUsuario()
+renderNombreUsuario()

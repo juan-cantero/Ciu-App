@@ -85,13 +85,18 @@ class UserForm {
   }
 }
 
- function traerUsuarios() {
+function traerUsuarios() {
     const usuariosJson = window.localStorage.getItem('usuarios')
     const usuarios = JSON.parse(usuariosJson)
     return usuarios;
+}
 
+function renderNombreUsuario() {
+  const nombreUsuario = window.localStorage.getItem('nombreUsuario')
+  document.querySelector(".navbar__nombre").textContent = nombreUsuario;
 }
 
 
-
 const userForm = new UserForm(new formUI(),usuarios);
+
+renderNombreUsuario()

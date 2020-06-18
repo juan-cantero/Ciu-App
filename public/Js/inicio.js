@@ -13,7 +13,6 @@ window.onload = () => {
 function renderNombreUsuario() {
     const nombreUsuario = window.localStorage.getItem('nombreUsuario')
     document.querySelector(".navbar__nombre").textContent = nombreUsuario;
-
 }
 
 async function traerUsuariosDelJSON() {
