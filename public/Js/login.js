@@ -28,8 +28,8 @@ async function iniciarSesion() {
         await guardarSolicitudes();
         await guardarNombreDeUsuario(user.usuario);
         buscarUsuario(data.usuarios, user);
-    }else{
-        alertaLogin("Contraseña invalida! Debe haber al menos una letra y un número",changePasswordStyle)
+    } else {
+        alertaLogin("Contraseña invalida! Debe haber al menos una letra y un número", changePasswordStyle)
     }
 }
 
@@ -106,8 +106,10 @@ const buscarUsuario = (usuarios, user) => {
     if (usuarioEncontrado.length === 0) {
         alertaUsuario("Usuario y/o contraseña Incorrectos");
     } else {
-        document.location.href = "inicio.html";
-        console.log("Iniciando sesion...")
+        usuarioEncontrado[0].activo === "si" ? document.location.href = "inicio.html" :
+            alertaUsuario("El usuario esta inactivo")
+        // console.log(usuarioEncontrado[0].activo)
+        // console.log(usuarioEncontrado.activo === "si")
     }
 }
 
