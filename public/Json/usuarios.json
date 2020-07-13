@@ -5,17 +5,16 @@
             "nombre": "Magui",
             "contrasenia":"12ab",
             "activo": "si",
-            "avatar": "http:avatar1",
+            "avatar": "https://image.flaticon.com/icons/svg/828/828786.svg",
             "fecha":"2019-07-30",
             "checked":false
-            
         },
         {
             "usuario":87654321,
             "nombre": "Joni",
             "contrasenia":"12ab",
             "activo":"no",
-            "avatar":"http:avatar2",
+            "avatar":"https://image.flaticon.com/icons/svg/828/828841.svg",
             "fecha":"2019-07-30",
             "checked":false
 
@@ -25,7 +24,7 @@
             "nombre":"Juan",
             "contrasenia":"12ab",
             "activo": "si",
-            "avatar":"http:avatar3",
+            "avatar":"https://image.flaticon.com/icons/svg/828/828752.svg",
             "fecha":"2019-07-30",
             "checked":false
         }

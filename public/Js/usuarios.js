@@ -90,12 +90,11 @@ async function renderUsuarios() {
         table += `
                 <tr>
                     <td>${usuario.nombre}</td>
-                    <td>${usuario.avatar}</td>
+                    <td><img src=${usuario.avatar} width="50"></td>
                     <td>${usuario.fecha}</td>
                     <td>${usuario.activo}</td>
                     <td><input type="checkbox" class="usuario-tabla-checked"></td>
                 </tr>
-            
             `
     });
     document.querySelector('.usuarios-tabla').innerHTML = table;
