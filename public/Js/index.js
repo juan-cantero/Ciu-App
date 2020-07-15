@@ -1,11 +1,8 @@
 window.onload = (e) => {
-     guardarUsuarios()
+    guardarUsuarios()
     guardarSolicitudes()
     document.location.href="/public/html/inicio.html"
-    
 }
-
-
 
 function renderNombreUsuario() {
     const nombreUsuario = window.localStorage.getItem('nombreUsuario')

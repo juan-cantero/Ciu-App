@@ -1,9 +1,4 @@
 
-// window.onload = (e) => {
-//     document.location.href="/public/html/login.html"
-
-// }
-
 window.onload = () => {
     guardarUsuarios()
     guardarSolicitudes()

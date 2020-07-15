@@ -27,6 +27,7 @@ async function iniciarSesion() {
         let data = await traerUsuarioDeJson();
         await guardarSolicitudes();
         await guardarNombreDeUsuario(user.usuario);
+        console.log(user.usuario)
         buscarUsuario(data.usuarios, user);
     } else {
         alertaLogin("Contraseña invalida! Debe haber al menos una letra y un número", changePasswordStyle)
@@ -106,10 +107,8 @@ const buscarUsuario = (usuarios, user) => {
     if (usuarioEncontrado.length === 0) {
         alertaUsuario("Usuario y/o contraseña Incorrectos");
     } else {
-        usuarioEncontrado[0].activo === "si" ? document.location.href = "inicio.html" :
-            alertaUsuario("El usuario esta inactivo")
-        // console.log(usuarioEncontrado[0].activo)
-        // console.log(usuarioEncontrado.activo === "si")
+        usuarioEncontrado[0].activo === "si" ? document.location.href = "inicio.html" 
+        : alertaUsuario("El usuario esta inactivo")
     }
 }
 
@@ -145,11 +144,14 @@ async function guardarSolicitudes() {
 
 async function guardarNombreDeUsuario(nombreAGuardar) {
     const data = await traerUsuarioDeJson();
-    const user = data.usuarios.find(u => u.usuario === nombreAGuardar);
+    console.log(data)
+    const user = data.usuarios.find(u => u.usuario == nombreAGuardar);
     console.log(user);
-
+    console.log(nombreAGuardar)
     if (user != undefined) {
-        window.localStorage.setItem('nombreUsuario', user.usuario);
+        window.localStorage.setItem('nombreUsuario', user.nombre);
+        window.localStorage.setItem('usuario', user.usuario);
+        console.log("guardar nombre de usuario")
     } else {
         console.log("Usuario no encontrado")
     }

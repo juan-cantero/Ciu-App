@@ -3,8 +3,6 @@
 var solicitudParaActualizar;
 var solicitudes;
 
-
-
 async function traerSolicitudes() {
     const solicitudesString = window.localStorage.getItem('solicitudes');
     const solicitudes = JSON.parse(solicitudesString);
@@ -20,7 +18,10 @@ async function renderSolicitudes() {
                         <th>Seleccion</th>
 
                     </tr>`;
-    data.forEach((solicitud) => {
+    const solicitudesUsuario = data.filter(solicitud =>
+        solicitud.solicitante == window.localStorage.getItem('usuario'))
+
+    solicitudesUsuario.forEach((solicitud) => {
 
         table += `
                 <tr>
