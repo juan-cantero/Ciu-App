@@ -29,7 +29,6 @@ class formUI {
     return document.querySelector('.cancelar')
   }
 }
-
 class UserForm {
   constructor(formUI,usuarios){
     this.formUI = formUI
@@ -95,7 +94,6 @@ function renderNombreUsuario() {
   const nombreUsuario = window.localStorage.getItem('nombreUsuario')
   document.querySelector(".navbar__nombre").textContent = nombreUsuario;
 }
-
 
 const userForm = new UserForm(new formUI(),usuarios);
 

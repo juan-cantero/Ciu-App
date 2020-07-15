@@ -21,7 +21,7 @@
         {
             "usuario":98765432,
             "nombre":"Juan",
-            "contrasenia":"12ab",
+            "contrasenia":"12ac",
             "activo": "si",
             "avatar":"https://image.flaticon.com/icons/svg/828/828752.svg",
             "fecha":"2019-07-30",
